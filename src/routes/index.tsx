@@ -169,7 +169,7 @@ const hoteis = [
 ];
 
 const investimento = [
-  { grupo: "Aéreo", itens: [{ nome: "BSB · MXP — FCO · BSB", obs: "TAP Air Portugal, via Lisboa, 2 passageiros", valor: "R$ 28.044,15" }] },
+  { grupo: "Aéreo", itens: [{ nome: "BSB · MXP — FCO · BSB", obs: "TAP Air Portugal, via Lisboa, 2 passageiros, com 1 bagagem despachada de 23 kg", valor: "R$ 28.944,15" }] },
   {
     grupo: "Ferroviário",
     itens: [
@@ -322,6 +322,14 @@ function Index() {
               ))}
             </div>
           ))}
+          <div className="card" style={{ padding: "22px 26px", marginBottom: 22 }}>
+            <p className="eyebrow" style={{ fontSize: 10 }}>Bagagem</p>
+            <p style={{ fontSize: 15, lineHeight: 1.75, marginTop: 10 }}>
+              Além da bagagem de mão, o bilhete inclui <b style={{ fontWeight: 500 }}>1 peça despachada de até 23 kg</b>,
+              no total para os dois passageiros, válida na ida e na volta.
+            </p>
+          </div>
+
           <div style={{ border: `1px solid ${OURO}`, borderRadius: 4, padding: "22px 26px", marginTop: 8, background: "rgba(201,169,110,.06)" }}>
             <p className="eyebrow" style={{ fontSize: 10 }}>Atenção ao embarque de volta</p>
             <p style={{ fontSize: 15, lineHeight: 1.75, marginTop: 10 }}>
@@ -462,18 +470,18 @@ function Index() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))", gap: 30, marginTop: 24 }}>
               <div>
                 <p style={{ fontSize: 13, letterSpacing: ".16em", textTransform: "uppercase", color: "rgba(240,237,232,.6)" }}>À vista no Pix</p>
-                <p className="num" style={{ fontSize: 38, color: OURO, marginTop: 8, lineHeight: 1.1 }}>R$ 38.806,65</p>
-                <p className="num" style={{ fontSize: 13.5, color: "rgba(240,237,232,.5)", marginTop: 6 }}>R$ 19.403,33 por pessoa</p>
+                <p className="num" style={{ fontSize: 38, color: OURO, marginTop: 8, lineHeight: 1.1 }}>R$ 39.706,65</p>
+                <p className="num" style={{ fontSize: 13.5, color: "rgba(240,237,232,.5)", marginTop: 6 }}>R$ 19.853,33 por pessoa</p>
               </div>
               <div>
                 <p style={{ fontSize: 13, letterSpacing: ".16em", textTransform: "uppercase", color: "rgba(240,237,232,.6)" }}>Cartão · 10x</p>
-                <p className="num" style={{ fontSize: 32, marginTop: 8, lineHeight: 1.1 }}>R$ 4.357,81</p>
-                <p className="num" style={{ fontSize: 13.5, color: "rgba(240,237,232,.5)", marginTop: 6 }}>total R$ 43.578,08</p>
+                <p className="num" style={{ fontSize: 32, marginTop: 8, lineHeight: 1.1 }}>R$ 4.458,87</p>
+                <p className="num" style={{ fontSize: 13.5, color: "rgba(240,237,232,.5)", marginTop: 6 }}>total R$ 44.588,74</p>
               </div>
               <div>
                 <p style={{ fontSize: 13, letterSpacing: ".16em", textTransform: "uppercase", color: "rgba(240,237,232,.6)" }}>Cartão · 18x</p>
-                <p className="num" style={{ fontSize: 32, marginTop: 8, lineHeight: 1.1 }}>R$ 2.653,16</p>
-                <p className="num" style={{ fontSize: 13.5, color: "rgba(240,237,232,.5)", marginTop: 6 }}>total R$ 47.756,95</p>
+                <p className="num" style={{ fontSize: 32, marginTop: 8, lineHeight: 1.1 }}>R$ 2.714,70</p>
+                <p className="num" style={{ fontSize: 13.5, color: "rgba(240,237,232,.5)", marginTop: 6 }}>total R$ 48.864,52</p>
               </div>
             </div>
           </div>
