@@ -94,7 +94,7 @@ const roteiro = [
     mes: "jan",
     semana: "Sexta",
     titulo: "Roma · Vaticano",
-    texto: "Ingresso sem filas para os Museus Vaticanos e a Capela Sistina, além de visita guiada à Basílica de São Pedro. A ordem depende dos horários de ingresso. Restante do dia livre.",
+    texto: "Ingresso sem filas para os Museus Vaticanos e a Capela Sistina. A ordem depende dos horários de ingresso. Restante do dia livre para a Basílica de São Pedro e para o centro.",
   },
   {
     dia: "16",
@@ -165,6 +165,38 @@ const hoteis = [
     datas: "Check-in 14/01 às 14h · check-out 16/01 às 11h",
     fotos: ["santina-terraco.jpg", "santina-quarto.jpg", "santina-lounge.jpg"],
     taxa: "R$ 181,54",
+  },
+];
+
+const opcionais = [
+  {
+    nome: "Tour Arena · Roma Imperial",
+    quando: "Quinta, 14 · tarde",
+    desc: "Coliseu com acesso à arena, onde ficava o palco dos gladiadores, mais Fórum Romano e Monte Palatino. Grupo de até ~20 pessoas, guia oficial em português, bilhetes inclusos.",
+    dur: "~3h",
+    eur: "108,90",
+    eurDupla: "217,80",
+    brl: "R$ 1.295,91",
+    destaque: true,
+  },
+  {
+    nome: "Tour Vaticano",
+    quando: "Sexta, 15 · manhã",
+    desc: "Museus Vaticanos e Capela Sistina com entrada rápida e guia oficial em português. Bilhetes inclusos.",
+    dur: "~2h30",
+    eur: "119,90",
+    eurDupla: "239,80",
+    brl: "R$ 1.426,81",
+    nota: "Na modalidade em grupo a Basílica de São Pedro não está inclusa — o acesso guiado à Basílica existe só no tour semiprivativo. Podemos cotar a versão semiprivativa se quiser a Basílica com guia.",
+  },
+  {
+    nome: "Rolê Noturno pela Roma Iluminada",
+    quando: "Quinta, 14 · noite",
+    desc: "Caminhada no sentido oposto ao fluxo turístico: Fontana di Trevi, Pantheon, Altar da Pátria e pontos fora do roteiro óbvio, com Roma iluminada.",
+    dur: "~3h",
+    eur: "82,50",
+    eurDupla: "165,00",
+    brl: "R$ 981,75",
   },
 ];
 
@@ -441,6 +473,71 @@ function Index() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── OPCIONAIS ────────────────────────── */}
+      <section className="sec">
+        <div className="wrap">
+          <p className="eyebrow">Experiências opcionais</p>
+          <h2 className="font-display">Roma com guia brasileiro</h2>
+          <div className="rule" />
+          <p style={{ fontSize: 16.5, lineHeight: 1.85, color: "rgba(240,237,232,.74)", maxWidth: 720, marginBottom: 44 }}>
+            Três experiências que se encaixam exatamente nos dias que vocês já têm em Roma, operadas por uma
+            agência brasileira com sede na cidade — <b style={{ fontWeight: 500 }}>guia oficial em português,
+            bilhetes inclusos e entrada rápida</b>. Não estão no valor do pacote; podem ser contratadas à parte.
+          </p>
+
+          {opcionais.map((o) => (
+            <div key={o.nome} className="card" style={{ padding: "28px 30px", marginBottom: 20, borderColor: o.destaque ? OURO : undefined }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 24, flexWrap: "wrap" }}>
+                <div>
+                  <p className="eyebrow" style={{ fontSize: 10 }}>{o.quando} · {o.dur}</p>
+                  <h3 className="font-display" style={{ fontSize: 28, fontWeight: 500, marginTop: 7 }}>{o.nome}</h3>
+                </div>
+                <div style={{ textAlign: "right" }}>
+                  <p className="num" style={{ fontSize: 26, color: OURO }}>€ {o.eur}</p>
+                  <p style={{ fontSize: 12, letterSpacing: ".14em", textTransform: "uppercase", color: "rgba(240,237,232,.45)", marginTop: 3 }}>por pessoa</p>
+                </div>
+              </div>
+              <p style={{ fontSize: 15, lineHeight: 1.75, color: "rgba(240,237,232,.7)", marginTop: 14 }}>{o.desc}</p>
+              {o.nota && (
+                <p style={{ fontSize: 13.5, lineHeight: 1.7, marginTop: 14, paddingLeft: 14, borderLeft: `2px solid rgba(201,169,110,.5)`, color: "rgba(240,237,232,.55)", fontStyle: "italic" }}>
+                  {o.nota}
+                </p>
+              )}
+              <div style={{ display: "flex", justifyContent: "space-between", gap: 20, flexWrap: "wrap", marginTop: 18, paddingTop: 16, borderTop: "1px solid rgba(201,169,110,.14)" }}>
+                <p className="num" style={{ fontSize: 14, color: "rgba(240,237,232,.6)" }}>Para os dois: € {o.eurDupla}</p>
+                <p className="num" style={{ fontSize: 14, color: "rgba(240,237,232,.6)" }}>≈ {o.brl}</p>
+              </div>
+            </div>
+          ))}
+
+          <div className="card" style={{ padding: "28px 30px", marginTop: 26, borderColor: OURO }}>
+            <p className="eyebrow" style={{ fontSize: 10 }}>As três juntas · 2 pessoas</p>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: 24, flexWrap: "wrap", marginTop: 14 }}>
+              <p className="num" style={{ fontSize: 36, color: OURO, lineHeight: 1.1 }}>€ 622,60</p>
+              <p className="num" style={{ fontSize: 20, color: "rgba(240,237,232,.72)" }}>≈ R$ 3.704,47</p>
+            </div>
+            <p className="num" style={{ fontSize: 13, color: "rgba(240,237,232,.45)", marginTop: 14, lineHeight: 1.7 }}>
+              Conversão de referência ao câmbio de R$ 5,95 por euro em 27/10/2026. O valor em reais varia conforme
+              a cotação do dia da contratação.
+            </p>
+          </div>
+
+          <div style={{ border: `1px solid ${OURO}`, borderRadius: 4, padding: "22px 26px", marginTop: 26, background: "rgba(201,169,110,.06)" }}>
+            <p className="eyebrow" style={{ fontSize: 10 }}>Como encaixar no dia 14</p>
+            <p style={{ fontSize: 15, lineHeight: 1.75, marginTop: 10 }}>
+              O Coliseu à tarde e o passeio noturno no mesmo dia somam cerca de <b style={{ fontWeight: 500 }}>6 horas
+              a pé</b>, logo depois do trem de Florença. É viável, mas puxado. A alternativa é levar o noturno para a
+              sexta — só que a noite de sexta antecede o embarque de madrugada. Vale escolher qual troca compensa mais.
+            </p>
+          </div>
+
+          <p style={{ fontSize: 14, lineHeight: 1.75, color: "rgba(240,237,232,.5)", marginTop: 26 }}>
+            Também existem transfers privativos com motorista a partir de € 60 e passeios bate-e-volta saindo de
+            Florença, Milão e Veneza — Pisa, Chianti, Cinque Terre, Lago de Como, Verona. Se interessar, cotamos à parte.
+          </p>
         </div>
       </section>
 
