@@ -12,105 +12,104 @@ const CARTA = "#15151b";
 const voos = [
   {
     sentido: "Ida",
-    data: "Quinta, 7 de janeiro",
+    data: "Quarta, 21 de janeiro",
     pernas: [
-      { n: "TP 58", de: "BSB", deNome: "Brasília", hs: "18:30", para: "LIS", paraNome: "Lisboa", hc: "06:40", dur: "9h10", dia: "+1" },
-      { n: "TP 826", de: "LIS", deNome: "Lisboa", hs: "13:15", para: "MXP", paraNome: "Milão · Malpensa", hc: "16:55", dur: "2h40", dia: "" },
+      { n: "LH 4683", de: "BSB", deNome: "Brasília", hs: "17:45", para: "GRU", paraNome: "São Paulo · Guarulhos", hc: "19:35", dur: "1h50", dia: "" },
+      { n: "LH 505", de: "GRU", deNome: "São Paulo · Guarulhos", hs: "21:35", para: "MUC", paraNome: "Munique", hc: "13:00", dur: "11h25", dia: "+1", conexao: "conexão de 2h em Guarulhos" },
+      { n: "LH 1856", de: "MUC", deNome: "Munique", hs: "15:20", para: "MXP", paraNome: "Milão · Malpensa", hc: "16:30", dur: "1h10", dia: "", conexao: "conexão de 2h20 em Munique" },
     ],
-    escala: "conexão de 6h35 em Lisboa — folga larga, o suficiente para tomar café da manhã na cidade sem risco de perder o segundo trecho",
   },
   {
     sentido: "Volta",
-    data: "Sábado, 16 de janeiro",
+    data: "Sexta, 29 de janeiro",
     pernas: [
-      { n: "TP 839", de: "FCO", deNome: "Roma · Fiumicino", hs: "05:55", para: "LIS", paraNome: "Lisboa", hc: "08:10", dur: "3h15", dia: "" },
-      { n: "TP 57", de: "LIS", deNome: "Lisboa", hs: "09:55", para: "BSB", paraNome: "Brasília", hc: "16:45", dur: "9h50", dia: "" },
+      { n: "LH 1873", de: "FCO", deNome: "Roma · Fiumicino", hs: "07:05", para: "MUC", paraNome: "Munique", hc: "08:35", dur: "1h30", dia: "" },
+      { n: "LH 504", de: "MUC", deNome: "Munique", hs: "11:45", para: "GRU", paraNome: "São Paulo · Guarulhos", hc: "20:15", dur: "12h30", dia: "", conexao: "conexão de 3h10 em Munique" },
+      { n: "LH 4706", de: "GRU", deNome: "São Paulo · Guarulhos", hs: "23:40", para: "BSB", paraNome: "Brasília", hc: "01:25", dur: "1h45", dia: "+1", conexao: "conexão de 3h25 em Guarulhos" },
     ],
-    escala: "conexão de 1h45 em Lisboa",
   },
 ];
 
 const roteiro = [
   {
-    dia: "07",
-    mes: "jan",
-    semana: "Quinta",
-    titulo: "Embarque em Brasília",
-    texto: "Saída às 18h30 no voo da TAP para Lisboa. Noite a bordo.",
-  },
-  {
-    dia: "08",
-    mes: "jan",
-    semana: "Sexta",
-    titulo: "Chegada a Milão",
-    texto: "Desembarque em Lisboa pela manhã e conexão para Milão, com chegada ao Malpensa às 16h55. Traslado ao Hotel Bernina e primeira noite na cidade — uma caminhada curta até a Galleria Vittorio Emanuele II e jantar em trattoria do centro.",
-    nota: "A chegada é no fim da tarde: o dia 8 é de deslocamento, com o centro reservado para a noite.",
-  },
-  {
-    dia: "09",
-    mes: "jan",
-    semana: "Sábado",
-    titulo: "Milão · Duomo e tour completo",
-    texto: "Dia dedicado à região do Duomo. Às 14h45, tour completo por Milão incluindo o Teatro alla Scala, a catedral e a experiência ligada à Última Ceia de Leonardo da Vinci, conforme as condições do passeio contratado.",
-  },
-  {
-    dia: "10",
-    mes: "jan",
-    semana: "Domingo",
-    titulo: "Milão → Veneza · gôndola",
-    texto: "Frecciarossa das 09h44, chegada a Venezia Santa Lucia às 12h12. Check-in no Hotel Rialto, ao pé da ponte. Passeio de gôndola pela região da Ponte dos Suspiros e caminhada até a Piazza San Marco.",
-  },
-  {
-    dia: "11",
-    mes: "jan",
-    semana: "Segunda",
-    titulo: "Veneza · Rialto e Grande Canal",
-    texto: "Manhã pela Ponte di Rialto, pelo mercado e pelas ruas históricas. À tarde, vaporetto pelo Grande Canal e tempo livre para explorar a cidade sem pressa.",
-  },
-  {
-    dia: "12",
-    mes: "jan",
-    semana: "Terça",
-    titulo: "Veneza → Florença · Uffizi",
-    texto: "Frecciarossa das 09h26, chegada a Florença às 11h39. Guarda de bagagens no Grand Hotel Cavour e visita guiada à Galeria Uffizi, em horário a confirmar. Caminhada pelo centro histórico.",
-    nota: "A Uffizi fecha às segundas — por isso a visita está marcada para a terça.",
-  },
-  {
-    dia: "13",
+    dia: "21",
     mes: "jan",
     semana: "Quarta",
-    titulo: "Florença · arte e gastronomia",
-    texto: "Piazza del Duomo, Piazza della Signoria e Ponte Vecchio. Tempo para a gastronomia toscana e, se o clima permitir, a vista panorâmica no Piazzale Michelangelo ao entardecer.",
+    titulo: "Embarque em Brasília",
+    texto: "Saída às 17h45 para São Paulo e, às 21h35, o voo da Lufthansa para Munique. Noite a bordo.",
   },
   {
-    dia: "14",
+    dia: "22",
     mes: "jan",
     semana: "Quinta",
-    titulo: "Florença → Roma · Coliseu",
-    texto: "Frecciarossa das 09h33, chegada a Roma Termini às 11h14 — o hotel fica a poucos minutos a pé da estação. Após deixar as malas, visita guiada ao Coliseu, Fórum Romano e Monte Palatino. À noite, a Fontana di Trevi iluminada.",
+    titulo: "Chegada a Milão",
+    texto: "Desembarque em Munique às 13h e conexão para Milão, com chegada ao Malpensa às 16h30. Traslado ao Hotel Bernina e primeira noite na cidade — caminhada curta pela Galleria Vittorio Emanuele II e jantar em trattoria do centro.",
+    nota: "A chegada é no fim da tarde: o dia 22 é de deslocamento, com o centro reservado para a noite.",
   },
   {
-    dia: "15",
+    dia: "23",
     mes: "jan",
     semana: "Sexta",
-    titulo: "Roma · Vaticano",
-    texto: "Ingresso sem filas para os Museus Vaticanos e a Capela Sistina. A ordem depende dos horários de ingresso. Restante do dia livre para a Basílica de São Pedro e para o centro.",
+    titulo: "Milão · Duomo e La Scala",
+    texto: "Dia inteiro na região do Duomo: a catedral e seus terraços, a Galleria, o Teatro alla Scala e o Castello Sforzesco. A Última Ceia, de Leonardo, exige ingresso com data e hora marcadas — se quiserem, reservamos com antecedência.",
   },
   {
-    dia: "16",
+    dia: "24",
     mes: "jan",
     semana: "Sábado",
+    titulo: "Milão → Veneza",
+    texto: "Frecciarossa das 09h44, chegada a Venezia Santa Lucia às 12h12. Check-in no Hotel Rialto, ao pé da ponte. Tarde pela Piazza San Marco e pela região da Ponte dos Suspiros.",
+  },
+  {
+    dia: "25",
+    mes: "jan",
+    semana: "Domingo",
+    titulo: "Veneza · Grande Canal",
+    texto: "Dia inteiro na cidade: mercado de Rialto pela manhã, vaporetto pelo Grande Canal à tarde e, para quem quiser, a travessia até Murano e Burano. Fim de tarde sem roteiro, que é quando Veneza fica melhor.",
+  },
+  {
+    dia: "26",
+    mes: "jan",
+    semana: "Segunda",
+    titulo: "Veneza → Roma",
+    texto: "Frecciarossa das 08h40, chegada a Roma Termini às 12h27. Check-in no Hotel Medici, a poucos minutos da estação, e tarde livre pelo centro — Fontana di Trevi, Pantheon e a Piazza di Spagna a pé.",
+  },
+  {
+    dia: "27",
+    mes: "jan",
+    semana: "Terça",
+    titulo: "Roma · Vaticano",
+    texto: "Museus Vaticanos e Capela Sistina pela manhã, com ingresso de entrada rápida. Restante do dia para a Basílica de São Pedro, Castel Sant’Angelo e o bairro de Trastevere ao anoitecer.",
+    nota: "O Vaticano fica na terça de propósito: às quartas de manhã a Praça de São Pedro recebe a audiência geral e a área fica tomada.",
+  },
+  {
+    dia: "28",
+    mes: "jan",
+    semana: "Quarta",
+    titulo: "Roma · Coliseu e Roma Imperial",
+    texto: "Coliseu, Fórum Romano e Monte Palatino — a parte do dia que pede guia. À tarde, Capitólio e Altar da Pátria. Último dia inteiro na Itália.",
+  },
+  {
+    dia: "29",
+    mes: "jan",
+    semana: "Sexta",
     titulo: "Retorno ao Brasil",
-    texto: "Traslado ao Fiumicino para o voo das 05h55, com conexão em Lisboa e chegada a Brasília às 16h45 do mesmo dia.",
-    nota: "Atenção: o voo de madrugada exige deixar o hotel por volta das 3h30. A última noite em Roma é curta — vale encerrar o dia 15 mais cedo.",
+    texto: "Traslado ao Fiumicino para o voo das 07h05, com conexões em Munique e São Paulo.",
+    nota: "Atenção: o voo sai às 07h05 — a saída do hotel é por volta das 4h30 da madrugada. Vale encerrar a quinta-feira mais cedo.",
     alerta: true,
+  },
+  {
+    dia: "30",
+    mes: "jan",
+    semana: "Sábado",
+    titulo: "Chegada a Brasília",
+    texto: "Pouso em Brasília à 01h25 da madrugada de sábado, depois da conexão em Guarulhos.",
   },
 ];
 
 const trens = [
-  { data: "10 jan", de: "Milano Centrale", para: "Venezia S. Lucia", hs: "09:44", hc: "12:12", dur: "2h28", num: "Frecciarossa 9717" },
-  { data: "12 jan", de: "Venezia S. Lucia", para: "Firenze S.M. Novella", hs: "09:26", hc: "11:39", dur: "2h13", num: "Frecciarossa 9411" },
-  { data: "14 jan", de: "Firenze S.M. Novella", para: "Roma Termini", hs: "09:33", hc: "11:14", dur: "1h41", num: "Frecciarossa 8513" },
+  { data: "24 jan", de: "Milano Centrale", para: "Venezia S. Lucia", hs: "09:44", hc: "12:12", dur: "2h28", num: "Frecciarossa 9717" },
+  { data: "26 jan", de: "Venezia S. Lucia", para: "Roma Termini", hs: "08:40", hc: "12:27", dur: "3h47", num: "Frecciarossa 9411" },
 ];
 
 const hoteis = [
@@ -123,65 +122,41 @@ const hoteis = [
     bairro: "A poucos passos da Estação Central e do Corso Buenos Aires",
     quarto: "Double Standard Room",
     detalhe: "17 m² · 1 cama de casal · café da manhã incluso",
-    datas: "Check-in 08/01 às 14h · check-out 10/01 às 11h",
+    datas: "Check-in 22/01 às 14h · check-out 24/01 às 11h",
     fotos: ["bernina-fachada.jpg", "bernina-quarto.jpg", "bernina-lounge.jpg"],
-    taxa: "R$ 169,44",
+    taxa: "R$ 166,56",
   },
   {
     cidade: "Veneza",
     nome: "Hotel Rialto",
-    estrelas: 3,
+    estrelas: 4,
     nota: "9,0",
     endereco: "San Marco, 5149 — Ponte di Rialto",
     bairro: "Literalmente ao pé da ponte, sobre o Grande Canal",
     quarto: "Economy Room",
     detalhe: "Café da manhã incluso",
-    datas: "Check-in 10/01 às 14h · check-out 12/01 às 11h",
+    datas: "Check-in 24/01 às 14h · check-out 26/01 às 11h",
     fotos: ["rialto-terraco.jpg", "rialto-quarto.jpg", "rialto-cafe.jpg"],
-    taxa: "R$ 75,04",
-  },
-  {
-    cidade: "Florença",
-    nome: "Grand Hotel Cavour",
-    estrelas: 4,
-    nota: "9,4",
-    endereco: "Via del Proconsolo, 3",
-    bairro: "Centro histórico, entre o Duomo e a Piazza della Signoria",
-    quarto: "Quarto triplo luxo",
-    detalhe: "28 m² · 1 cama Queen e 1 sofá-cama · buffet de café da manhã incluso",
-    datas: "Check-in 12/01 às 14h30 · check-out 14/01 às 12h",
-    fotos: ["cavour-terraco.jpg", "cavour-quarto.jpg", "cavour-lobby.jpg"],
-    taxa: "R$ 169,44",
+    taxa: "R$ 73,76",
   },
   {
     cidade: "Roma",
-    nome: "Best Western Premier Royal Santina",
-    estrelas: 4,
-    nota: "9,0",
-    endereco: "Via Marsala, 22",
-    bairro: "A cerca de 100 m da Roma Termini — conveniente na chegada de trem e na saída de madrugada",
-    quarto: "Double Room · French Bed · Small",
-    detalhe: "1 cama de casal · café da manhã incluso",
-    datas: "Check-in 14/01 às 14h · check-out 16/01 às 11h",
-    fotos: ["santina-terraco.jpg", "santina-quarto.jpg", "santina-lounge.jpg"],
-    taxa: "R$ 181,54",
+    nome: "Hotel Medici",
+    estrelas: 3,
+    endereco: "Via Flavia, 96",
+    bairro: "Entre a Via Veneto e a Roma Termini — a pé da estação e do centro",
+    quarto: "Quarto triplo (Small)",
+    detalhe: "1 cama de casal e 1 cama dobrável de solteiro · café da manhã incluso",
+    datas: "Check-in 26/01 às 15h · check-out 29/01 às 10h",
+    fotos: ["medici-fachada.jpg", "medici-quarto.jpg", "medici-area.jpg"],
+    taxa: "R$ 214,19",
   },
 ];
 
 const opcionais = [
   {
-    nome: "Tour Arena · Roma Imperial",
-    quando: "Quinta, 14 · tarde",
-    desc: "Coliseu com acesso à arena, onde ficava o palco dos gladiadores, mais Fórum Romano e Monte Palatino. Grupo de até ~20 pessoas, guia oficial em português, bilhetes inclusos.",
-    dur: "~3h",
-    eur: "108,90",
-    eurDupla: "217,80",
-    brl: "R$ 1.295,91",
-    destaque: true,
-  },
-  {
     nome: "Tour Vaticano",
-    quando: "Sexta, 15 · manhã",
+    quando: "Terça, 27 · manhã",
     desc: "Museus Vaticanos e Capela Sistina com entrada rápida e guia oficial em português. Bilhetes inclusos.",
     dur: "~2h30",
     eur: "119,90",
@@ -191,32 +166,40 @@ const opcionais = [
   },
   {
     nome: "Rolê Noturno pela Roma Iluminada",
-    quando: "Quinta, 14 · noite",
+    quando: "Terça, 27 · noite",
     desc: "Caminhada no sentido oposto ao fluxo turístico: Fontana di Trevi, Pantheon, Altar da Pátria e pontos fora do roteiro óbvio, com Roma iluminada.",
     dur: "~3h",
     eur: "82,50",
     eurDupla: "165,00",
     brl: "R$ 981,75",
   },
+  {
+    nome: "Tour Arena · Roma Imperial",
+    quando: "Quarta, 28 · manhã",
+    desc: "Coliseu com acesso à arena, onde ficava o palco dos gladiadores, mais Fórum Romano e Monte Palatino. Grupo de até ~20 pessoas, guia oficial em português, bilhetes inclusos.",
+    dur: "~3h",
+    eur: "108,90",
+    eurDupla: "217,80",
+    brl: "R$ 1.295,91",
+    destaque: true,
+  },
 ];
 
 const investimento = [
-  { grupo: "Aéreo", itens: [{ nome: "BSB · MXP — FCO · BSB", obs: "TAP Air Portugal, via Lisboa, 2 passageiros, com 1 bagagem despachada de 23 kg", valor: "R$ 28.944,15" }] },
+  { grupo: "Aéreo", itens: [{ nome: "BSB · MXP — FCO · BSB", obs: "Lufthansa, via São Paulo e Munique, 2 passageiros", valor: "R$ 16.864,23" }] },
   {
     grupo: "Ferroviário",
     itens: [
-      { nome: "Milão → Veneza", obs: "Frecciarossa 9717 · 10/01", valor: "R$ 379,41" },
-      { nome: "Veneza → Florença", obs: "Frecciarossa 9411 · 12/01", valor: "R$ 645,04" },
-      { nome: "Florença → Roma", obs: "Frecciarossa 8513 · 14/01", valor: "R$ 379,41" },
+      { nome: "Milão → Veneza", obs: "Frecciarossa 9717 · 24/01", valor: "R$ 379,41" },
+      { nome: "Veneza → Roma", obs: "Frecciarossa 9411 · 26/01", valor: "R$ 645,04" },
     ],
   },
   {
     grupo: "Hospedagem",
     itens: [
-      { nome: "Hotel Bernina", obs: "Milão · 2 noites com café da manhã", valor: "R$ 1.845,93" },
-      { nome: "Hotel Rialto", obs: "Veneza · 2 noites com café da manhã", valor: "R$ 1.438,56" },
-      { nome: "Grand Hotel Cavour", obs: "Florença · 2 noites com café da manhã", valor: "R$ 3.651,90" },
-      { nome: "Royal Santina", obs: "Roma · 2 noites com café da manhã", valor: "R$ 1.970,25" },
+      { nome: "Hotel Bernina", obs: "Milão · 2 noites com café da manhã", valor: "R$ 2.031,30" },
+      { nome: "Hotel Rialto", obs: "Veneza · 2 noites com café da manhã", valor: "R$ 1.528,47" },
+      { nome: "Hotel Medici", obs: "Roma · 3 noites com café da manhã", valor: "R$ 2.627,37" },
     ],
   },
   {
@@ -263,12 +246,12 @@ function Index() {
           </h1>
           <div style={{ width: 160, height: 1, background: `linear-gradient(90deg, transparent, ${OURO}, transparent)`, margin: "34px auto 0" }} />
           <p style={{ marginTop: 28, fontSize: 15, letterSpacing: ".16em", textTransform: "uppercase", color: "rgba(240,237,232,.82)" }}>
-            Milão · Veneza · Florença · Roma
+            Milão · Veneza · Roma
           </p>
           <div style={{ display: "flex", justifyContent: "center", gap: 40, flexWrap: "wrap", marginTop: 46 }}>
             {[
-              { l: "Início", v: "7 jan" },
-              { l: "Fim", v: "17 jan" },
+              { l: "Início", v: "21 jan" },
+              { l: "Fim", v: "30 jan" },
               { l: "Duração", v: "10 dias" },
               { l: "Viajantes", v: "2 adultos" },
             ].map(({ l, v }) => (
@@ -285,19 +268,19 @@ function Index() {
       <section className="sec" style={{ paddingTop: 72 }}>
         <div className="wrap">
           <p className="eyebrow">O percurso</p>
-          <h2 className="font-display">Quatro cidades, duas noites em cada</h2>
+          <h2 className="font-display">Três cidades, sem correria</h2>
           <div className="rule" />
           <p style={{ fontSize: 17, lineHeight: 1.85, color: "rgba(240,237,232,.74)", maxWidth: 720 }}>
             O roteiro desce a Itália de norte a sul, sempre de trem de alta velocidade e sempre pela manhã —
-            de modo que a tarde da mudança já seja aproveitada na cidade seguinte. Todos os hotéis ficam no
-            centro, a pé das atrações principais.
+            de modo que a tarde da mudança já seja aproveitada na cidade seguinte. Duas noites em Milão, duas em
+            Veneza e três em Roma, que é a cidade que mais pede tempo. Todos os hotéis ficam no centro, a pé das
+            atrações principais.
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 20, marginTop: 50 }}>
             {[
-              { nome: "Milão", f: "d-milao.jpg", d: "08 a 10 jan", t: "Duomo, La Scala e a Última Ceia" },
-              { nome: "Veneza", f: "d-veneza.jpg", d: "10 a 12 jan", t: "Gôndola, San Marco e o Grande Canal" },
-              { nome: "Florença", f: "d-florenca.jpg", d: "12 a 14 jan", t: "Uffizi, Ponte Vecchio e a Toscana" },
-              { nome: "Roma", f: "d-roma.jpg", d: "14 a 16 jan", t: "Coliseu, Vaticano e a Fontana di Trevi" },
+              { nome: "Milão", f: "d-milao.jpg", d: "22 a 24 jan", t: "Duomo, La Scala e a Galleria" },
+              { nome: "Veneza", f: "d-veneza.jpg", d: "24 a 26 jan", t: "San Marco, Rialto e o Grande Canal" },
+              { nome: "Roma", f: "d-roma.jpg", d: "26 a 29 jan", t: "Coliseu, Vaticano e a Fontana di Trevi" },
             ].map((c) => (
               <div key={c.nome} className="card" style={{ overflow: "hidden" }}>
                 <div style={{ height: 180, backgroundImage: `url('/fotos/${c.f}')`, backgroundSize: "cover", backgroundPosition: "center" }} />
@@ -316,7 +299,7 @@ function Index() {
       <section className="sec" style={{ background: "#0b0b0f", borderTop: "1px solid rgba(201,169,110,.12)", borderBottom: "1px solid rgba(201,169,110,.12)" }}>
         <div className="wrap">
           <p className="eyebrow">O voo</p>
-          <h2 className="font-display">TAP Air Portugal, via Lisboa</h2>
+          <h2 className="font-display">Lufthansa, via São Paulo e Munique</h2>
           <div className="rule" />
           {voos.map((v) => (
             <div key={v.sentido} className="card" style={{ padding: "30px 30px 26px", marginBottom: 22 }}>
@@ -326,9 +309,9 @@ function Index() {
               </div>
               {v.pernas.map((p, i) => (
                 <div key={p.n}>
-                  {i === 1 && (
+                  {p.conexao && (
                     <p style={{ fontSize: 13.5, lineHeight: 1.65, color: "rgba(240,237,232,.58)", fontStyle: "italic", padding: "16px 0", borderLeft: `2px solid ${OURO}`, paddingLeft: 16, margin: "18px 0" }}>
-                      {v.escala}
+                      {p.conexao}
                     </p>
                   )}
                   <div style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr", gap: 18, alignItems: "center", padding: "18px 0" }}>
@@ -357,17 +340,17 @@ function Index() {
           <div className="card" style={{ padding: "22px 26px", marginBottom: 22 }}>
             <p className="eyebrow" style={{ fontSize: 10 }}>Bagagem</p>
             <p style={{ fontSize: 15, lineHeight: 1.75, marginTop: 10 }}>
-              Além da bagagem de mão, o bilhete inclui <b style={{ fontWeight: 500 }}>1 peça despachada de até 23 kg</b>,
-              no total para os dois passageiros, válida na ida e na volta.
+              Tarifa Economy da Lufthansa: cada passageiro leva a bagagem de mão e
+              <b style={{ fontWeight: 500 }}> 1 peça despachada de até 23 kg</b>, na ida e na volta.
             </p>
           </div>
 
           <div style={{ border: `1px solid ${OURO}`, borderRadius: 4, padding: "22px 26px", marginTop: 8, background: "rgba(201,169,110,.06)" }}>
             <p className="eyebrow" style={{ fontSize: 10 }}>Atenção ao embarque de volta</p>
             <p style={{ fontSize: 15, lineHeight: 1.75, marginTop: 10 }}>
-              O voo de Roma parte às <b style={{ fontWeight: 500 }}>05h55 de sábado, 16 de janeiro</b> — a saída do hotel
-              acontece por volta das <b style={{ fontWeight: 500 }}>3h30 da madrugada</b>. A última noite é curta;
-              vale encerrar o programa de sexta mais cedo.
+              O voo de Roma parte às <b style={{ fontWeight: 500 }}>07h05 de sexta, 29 de janeiro</b> — a saída do hotel
+              acontece por volta das <b style={{ fontWeight: 500 }}>4h30 da madrugada</b>. A volta tem duas conexões e
+              a chegada a Brasília é <b style={{ fontWeight: 500 }}>à 01h25 de sábado, 30</b>: vale deixar o sábado livre.
             </p>
           </div>
         </div>
@@ -406,10 +389,10 @@ function Index() {
       <section className="sec" style={{ background: "#0b0b0f", borderTop: "1px solid rgba(201,169,110,.12)", borderBottom: "1px solid rgba(201,169,110,.12)" }}>
         <div className="wrap">
           <p className="eyebrow">Entre as cidades</p>
-          <h2 className="font-display">Três trechos de alta velocidade</h2>
+          <h2 className="font-display">Dois trechos de alta velocidade</h2>
           <div className="rule" />
           <p style={{ fontSize: 16, lineHeight: 1.8, color: "rgba(240,237,232,.7)", maxWidth: 680, marginBottom: 40 }}>
-            Todos os trens saem de manhã e são diretos, sem conexões. As estações ficam no centro das
+Os dois trens saem de manhã e são diretos, sem conexões. As estações ficam no centro das
             cidades — nada de deslocamento para aeroporto entre um destino e outro.
           </p>
           <div style={{ display: "grid", gap: 16 }}>
@@ -438,7 +421,7 @@ function Index() {
       <section className="sec">
         <div className="wrap">
           <p className="eyebrow">Onde ficar</p>
-          <h2 className="font-display">Quatro hotéis, todos no centro</h2>
+          <h2 className="font-display">Três hotéis, todos no centro</h2>
           <div className="rule" />
           {hoteis.map((h) => (
             <div key={h.nome} className="card" style={{ overflow: "hidden", marginBottom: 34 }}>
@@ -449,7 +432,7 @@ function Index() {
                   <h3 className="font-display" style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 500, marginTop: 6 }}>{h.nome}</h3>
                   <p style={{ fontSize: 13, color: OURO, letterSpacing: ".18em", marginTop: 6 }}>
                     {"★".repeat(h.estrelas)}
-                    <span className="num" style={{ color: "rgba(240,237,232,.72)", letterSpacing: "normal", marginLeft: 12 }}>{h.nota} / 10</span>
+                    {h.nota && <span className="num" style={{ color: "rgba(240,237,232,.72)", letterSpacing: "normal", marginLeft: 12 }}>{h.nota} / 10</span>}
                   </p>
                 </div>
               </div>
@@ -502,18 +485,18 @@ function Index() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))", gap: 30, marginTop: 24 }}>
               <div>
                 <p style={{ fontSize: 13, letterSpacing: ".16em", textTransform: "uppercase", color: "rgba(240,237,232,.6)" }}>À vista no Pix</p>
-                <p className="num" style={{ fontSize: 38, color: OURO, marginTop: 8, lineHeight: 1.1 }}>R$ 39.706,65</p>
-                <p className="num" style={{ fontSize: 13.5, color: "rgba(240,237,232,.5)", marginTop: 6 }}>R$ 19.853,33 por pessoa</p>
+                <p className="num" style={{ fontSize: 38, color: OURO, marginTop: 8, lineHeight: 1.1 }}>R$ 24.552,38</p>
+                <p className="num" style={{ fontSize: 13.5, color: "rgba(240,237,232,.5)", marginTop: 6 }}>R$ 12.276,19 por pessoa</p>
               </div>
               <div>
                 <p style={{ fontSize: 13, letterSpacing: ".16em", textTransform: "uppercase", color: "rgba(240,237,232,.6)" }}>Cartão · 10x</p>
-                <p className="num" style={{ fontSize: 32, marginTop: 8, lineHeight: 1.1 }}>R$ 4.458,87</p>
-                <p className="num" style={{ fontSize: 13.5, color: "rgba(240,237,232,.5)", marginTop: 6 }}>total R$ 44.588,74</p>
+                <p className="num" style={{ fontSize: 32, marginTop: 8, lineHeight: 1.1 }}>R$ 2.754,36</p>
+                <p className="num" style={{ fontSize: 13.5, color: "rgba(240,237,232,.5)", marginTop: 6 }}>total R$ 27.543,61</p>
               </div>
               <div>
                 <p style={{ fontSize: 13, letterSpacing: ".16em", textTransform: "uppercase", color: "rgba(240,237,232,.6)" }}>Cartão · 18x</p>
-                <p className="num" style={{ fontSize: 32, marginTop: 8, lineHeight: 1.1 }}>R$ 2.714,70</p>
-                <p className="num" style={{ fontSize: 13.5, color: "rgba(240,237,232,.5)", marginTop: 6 }}>total R$ 48.864,52</p>
+                <p className="num" style={{ fontSize: 32, marginTop: 8, lineHeight: 1.1 }}>R$ 1.676,94</p>
+                <p className="num" style={{ fontSize: 13.5, color: "rgba(240,237,232,.5)", marginTop: 6 }}>total R$ 30.184,88</p>
               </div>
             </div>
           </div>
@@ -522,7 +505,7 @@ function Index() {
             <p className="eyebrow" style={{ fontSize: 10 }}>O que não está incluso</p>
             <ul style={{ listStyle: "none", marginTop: 16, display: "grid", gap: 12 }}>
               {[
-                "Taxas municipais de hospedagem, pagas diretamente a cada hotel — R$ 595,46 no total, sujeitas a variação cambial.",
+                "Taxas municipais de hospedagem, pagas diretamente a cada hotel — R$ 454,51 no total, sujeitas a variação cambial.",
                 "Traslados aeroporto–hotel em Milão e em Roma.",
                 "Ingressos, passeios e visitas guiadas descritos no roteiro, salvo os já contratados à parte.",
                 "Refeições além do café da manhã e despesas de caráter pessoal.",
@@ -590,17 +573,17 @@ function Index() {
           </div>
 
           <div style={{ border: `1px solid ${OURO}`, borderRadius: 4, padding: "22px 26px", marginTop: 26, background: "rgba(201,169,110,.06)" }}>
-            <p className="eyebrow" style={{ fontSize: 10 }}>Como encaixar no dia 14</p>
+            <p className="eyebrow" style={{ fontSize: 10 }}>Como os três se encaixam</p>
             <p style={{ fontSize: 15, lineHeight: 1.75, marginTop: 10 }}>
-              O Coliseu à tarde e o passeio noturno no mesmo dia somam cerca de <b style={{ fontWeight: 500 }}>6 horas
-              a pé</b>, logo depois do trem de Florença. É viável, mas puxado. A alternativa é levar o noturno para a
-              sexta — só que a noite de sexta antecede o embarque de madrugada. Vale escolher qual troca compensa mais.
+              Com três noites em Roma, os três passeios cabem sem aperto: Vaticano na manhã de terça, o noturno na
+              mesma terça à noite e o Coliseu na manhã de quarta. A <b style={{ fontWeight: 500 }}>noite de quinta fica
+              livre de propósito</b> — é a véspera do embarque das 4h30.
             </p>
           </div>
 
           <p style={{ fontSize: 14, lineHeight: 1.75, color: "rgba(240,237,232,.5)", marginTop: 26 }}>
             Também existem transfers privativos com motorista a partir de € 60 e passeios bate-e-volta saindo de
-            Florença, Milão e Veneza — Pisa, Chianti, Cinque Terre, Lago de Como, Verona. Se interessar, cotamos à parte.
+            Milão, Veneza e Roma — Pisa, Chianti, Cinque Terre, Lago de Como, Verona, Pompeia. Se interessar, cotamos à parte.
           </p>
         </div>
       </section>
